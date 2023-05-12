@@ -1,6 +1,5 @@
-const length = 8;
-
-const Fib = function*() {
+function FibSquence(length) {
+  const Fib = function*() {
     let previousValues = [1,1];
     let currentValue;
     yield 1;
@@ -21,5 +20,10 @@ const Fib = function*() {
     fibSqeuence.push(gen.next().value)
   }
 
-  console.log(fibSqeuence);
-  
+  console.log(fibSqeuence);  
+}
+
+
+
+const length = 8;
+FibSquence(length)

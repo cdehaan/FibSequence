@@ -1,4 +1,6 @@
 function FibSquence(length) {
+  if(typeof length !== "number") { return []; }
+  if(length > 1000) { return []; }
   const Fib = function*() {
     let previousValues = [1,1];
     let currentValue;
@@ -20,10 +22,12 @@ function FibSquence(length) {
     fibSqeuence.push(gen.next().value)
   }
 
-  console.log(fibSqeuence);  
+  return fibSqeuence;
 }
 
 
+const testValues = [8, 1, 0, -2, "8", 10000000, "Bobby Tables"];
 
-const length = 8;
-FibSquence(length)
+for (const testValue of testValues) {
+  console.log(`Length: ${testValue} (type: ${typeof testValue}), Output: ${FibSquence(testValue)}`)
+}
